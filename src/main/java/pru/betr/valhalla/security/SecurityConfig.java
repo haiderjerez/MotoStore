@@ -30,7 +30,7 @@ public class SecurityConfig {
             .map(user -> new org.springframework.security.core.userdetails.User(
                     user.getUsername(),
                     user.getPassword(),
-                    List.of(new SimpleGrantedAuthority("ROLE_USER")) // Asigna roles
+                    List.of(new SimpleGrantedAuthority("ROLE_USER"))
             ))
             .orElseThrow(() -> new UsernameNotFoundException("Usuario no encontrado"));
     }
@@ -51,13 +51,13 @@ public class SecurityConfig {
     @Bean
     public SecurityFilterChain securityFilterChain(HttpSecurity http) throws Exception {
         http
-            .csrf(csrf -> csrf.disable()) // Desactiva CSRF (opcional para pruebas)
+            .csrf(csrf -> csrf.disable())
             .authorizeHttpRequests(auth -> auth
                 .requestMatchers( "/api/auth/register", "/api/auth/login", "api/auth/profile", "api/motos/guardar", "api/motos/obtener", "api/motos/actualizar/{id}", "api/motos/eliminar/{id}", "api/motos/buscar", "api/motos/filtro").permitAll()
                 .anyRequest().authenticated()
             )
             .sessionManagement(session -> session.sessionCreationPolicy(SessionCreationPolicy.STATELESS))
-            .httpBasic(Customizer.withDefaults()); // 🔹 Reemplaza "withDefaults()"
+            .httpBasic(Customizer.withDefaults());
 
         return http.build();
     }

@@ -8,7 +8,7 @@ public class MotoDTO {
     private String marca;
     private String modelo;
     private String imagenUrl;
-    private double precio;  // ✅ Cambiar a double
+    private double precio;
     private int cilindrada;
 
     public MotoDTO(Long id, String marca, String modelo, String imagenUrl, double precio, int cilindrada) {
@@ -16,7 +16,7 @@ public class MotoDTO {
         this.marca = marca;
         this.modelo = modelo;
         this.imagenUrl = imagenUrl;
-        this.precio = precio;  // ✅ Guardamos como número
+        this.precio = precio;
         this.cilindrada = cilindrada;
     }
 
@@ -30,13 +30,13 @@ public class MotoDTO {
     public String getMarca() { return marca; }
     public String getModelo() { return modelo; }
     public String getImagenUrl() { return imagenUrl; }
-    public double getPrecio() { return precio; }  // ✅ Mantener como double
+    public double getPrecio() { return precio; }
     public int getCilindrada() { return cilindrada; }
 
     public void setId(Long id) { this.id = id; }
     public void setMarca(String marca) { this.marca = marca; }
     public void setModelo(String modelo) { this.modelo = modelo; }
     public void setImagenUrl(String imagenUrl) { this.imagenUrl = imagenUrl; }
-    public void setPrecio(double precio) { this.precio = precio; }  // ✅ Mantener como número
+    public void setPrecio(double precio) { this.precio = precio; }
     public void setCilindrada(int cilindrada) { this.cilindrada = cilindrada; }
 }

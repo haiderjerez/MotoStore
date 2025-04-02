@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MotoStore Valhalla</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+    <!-- Header con botones y título -->
+    <header>
+        <button id="openFilterModal">Filtrar Motos</button>
+        <h1 id="title">MotoStore Valhalla</h1>
+        <button id="openAddMotoModal">Agregar Moto</button>
+    </header>
+
+    <!-- Modal de Filtrar Motos -->
+    <div id="modalFiltrarMoto" class="modal">
+        <div class="modal-content">
+            <span id="closeFilterModal" class="close">&times;</span>
+            <h2>Filtrar Motos</h2>
+            <form id="formFiltrarMoto">
+                <input type="text" id="filtroMarca" placeholder="Marca">
+                <input type="number" id="filtroCilindrada" placeholder="Cilindrada mínima (cc)">
+                <input type="number" id="filtroPrecio" placeholder="Precio máximo ($)">
+                <button type="submit">Aplicar Filtros</button>
+            </form>
+        </div>
+    </div>
+
+     <!-- Modal de Agregar Moto -->
+     <div id="modalAgregarMoto" class="modal">
+        <div class="modal-content">
+            <span id="closeAddMotoModal" class="close">&times;</span>
+            <h2>Agregar Moto</h2>
+            <form id="formAgregarMoto">
+                <label for="marca">Marca:</label>
+                <select id="marca">
+                    <option value="BMW">BMW</option>
+                    <option value="Ducati">Ducati</option>
+                    <option value="Yamaha">Yamaha</option>
+                    <option value="Honda">Honda</option>
+                    <option value="Kawasaki">Kawasaki</option>
+                </select>
+
+                <label for="modelo">Modelo:</label>
+                <input type="text" id="modelo" required>
+
+                <label for="cilindrada">Cilindrada (cc):</label>
+                <input type="number" id="cilindrada" required>
+
+                <label for="precio">Precio:</label>
+                <input type="number" id="precio" required>
+
+                <label for="imagenUrl">URL de la Imagen:</label>
+                <input type="text" id="imagenUrl" required>
+
+                <button type="button" onclick="agregarMoto()">Guardar</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Contenedor de las motos -->
+    <div id="contenedorMotos" class="grid-container"></div>
+
+    <script src="script.js" defer></script>
+</body>
+</html>
